@@ -1,1 +1,2 @@
 -- Provide a query that includes the purchased track name AND artist name with each invoice line item.
+SELECT tracks.Name, artists.Name FROM invoice_items LEFT OUTER JOIN tracks ON invoice_items.TrackId  = tracks.TrackId LEFT OUTER JOIN albums ON tracks.AlbumId = albums.AlbumId LEFT OUTER JOIN artists ON albums.ArtistId = artists.ArtistId;
