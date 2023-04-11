@@ -1,2 +1,2 @@
 -- What was the most purchased track of 2013?
-SELECT tracks.Name FROM tracks LEFT OUTER JOIN invoice_items ON tracks.TrackId = invoice_items.TrackId LEFT OUTER JOIN invoices ON invoice_items.InvoiceId = invoices.InvoiceId WHERE invoices.InvoiceDate LIKE '2013%' GROUP BY tracks.Name ORDER BY COUNT(tracks.Name) DESC LIMIT 1;
+SELECT tracks.Name FROM tracks LEFT OUTER JOIN invoice_items ON tracks.TrackId = invoice_items.TrackId LEFT OUTER JOIN invoices ON invoice_items.InvoiceId = invoices.InvoiceId WHERE InvoiceDate LIKE '2013%' GROUP BY invoice_items.TrackId ORDER BY COUNT(invoice_items.TrackId) DESC;
